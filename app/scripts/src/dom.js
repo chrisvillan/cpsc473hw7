@@ -1,14 +1,14 @@
-import $ from 'jquery';
-import md5 from 'crypto-js/md5';
-import moment from 'moment';
+import $ from "jquery";
+import md5 from "crypto-js/md5";
+import moment from "moment";
 
 function createGravatarUrl(username) {
   let userhash = mad5(username);
   return `http://www.gravatar.com/avatar/${userhash.toString()}`;
 }
 
-export function promptForUsername(){
-  let username = prompt('Enter a username');
+export function promptForUsername() {
+  let username = prompt("Enter a username");
   return username.toLowerCase();
 }
 
@@ -22,45 +22,49 @@ export class ChatForm {
       event.preventDefault();
       let val = this.$input.val();
       submitCallback(val)
-      this.$input.val('');
+      this.$input.val("");
     });
 
-    this.$form.find('button').on('click', () => this.$form.submit());
+    this.$form.find("button").on("click", () => this.$form.submit());
   }
 }
 
-export class ChatList{
+export class ChatList {
   constructor(listSel, username) {
     this.$list = $(listSel);
     this.username = username;
   }
 
-drawMessage({user: u, timestamp: t, message: m}) {
-    let $messageRow = $('<li>', {
-        'class': 'message-row'
+  drawMessage({
+    user: u,
+    timestamp: t,
+    message: m
+  }) {
+    let $messageRow = $("<li>", {
+      "class": "message-row"
     });
     if (this.username === u) {
-      $messageRow.addClass('me');
+      $messageRow.addClass("me");
     }
-    let $message = $('<p>');
+    let $message = $("" < p > "");
 
-    $message.append($('<span>', {
-      'class': 'message-username',
+    $message.append($("<span>", {
+      "class": "message-username",
       text: u
     }));
 
-    $message.append($('<span>', {
-      'class': 'timestamp',
-      'data-time': t,
+    $message.append($("<span>", {
+      "class": "timestamp",
+      "data-time": t,
       text: moment(t).fromNow()
     }));
 
-    $message.append($('<span>', {
-      'class': 'message-message',
+    $message.append($("<span>", {
+      "class": "message-message",
       text: m
     }));
 
-    let $img = $('<img>',{
+    let $img = $("<img>", {
       src: createGravatarUrl(u),
       title: u
     });
@@ -72,14 +76,13 @@ drawMessage({user: u, timestamp: t, message: m}) {
     $messageRow.get(0).scrollIntoView();
   }
 
-  init(){
+  init() {
     this.timer = setInterval() => {
-      $('[data-time]').each((idx, element) =>{
-        let $element = $(element);
-        let timestamp = new Data().setTime($element.attr('data-time'));
-        let ago = moment(timestamp.fromNow();
-        $element.html(ago);
-      });
-    }, 1000);
+      $("[data-time]").each((idx, element) => {
+          let $element = $(element);
+          let timestamp = new Data().setTime($element.attr("data-time"));
+          let ago = moment(timestamp.fromNow(); $element.html(ago);
+          });
+      }, 1000);
   }
 }

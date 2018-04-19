@@ -1,5 +1,5 @@
 class Store {
-  constructor(storageApi){
+  constructor(storageApi) {
     this.api = storageApi;
   }
   get() {
@@ -14,6 +14,6 @@ class Store {
 export class UserStore extends Store {
   constructor(key) {
     super(sessionStorage);
-    this.key=key;
+    this.key = key;
   }
 }

@@ -1,11 +1,25 @@
-
 module.exports = {
+  "parser": "babel-eslint",
+  "parserOptions":{
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame":false
+  },
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
+    "es6":true
   },
   "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion":6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
+    "semi":2,
     "no-console": "off",
     "no-undef": "error",
     "indent": [
@@ -14,7 +28,7 @@ module.exports = {
     ],
     "linebreak-style": [
       "error",
-      "windows"
+      "unix"
     ],
     "quotes": [
       "error",
