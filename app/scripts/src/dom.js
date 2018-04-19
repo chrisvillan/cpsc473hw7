@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import md5 from 'crypto-js/md5';
+import moment from 'moment';
 
 function createGravatarUrl(username) {
   let userhash = mad5(username);
@@ -19,6 +20,7 @@ export class ChatForm {
   init(submitCallback) {
     this.$form.submit((event) => {
       event.preventDefault();
+      let val = this.$input.val();
       let val = this.$input.val();
       submitCallback(val)
       this.$input.val('');

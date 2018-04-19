@@ -1,1 +1,1 @@
-console.error("SyntaxError: /home/chrisvillan/Documents/cpsc473/hw7/app/scripts/src/dom.js: Unexpected token, expected ; (75:31) while parsing file: /home/chrisvillan/Documents/cpsc473/hw7/app/scripts/src/dom.js");
+console.error("SyntaxError: /home/chrisvillan/Documents/cpsc473/hw7/app/scripts/src/dom.js: Unexpected token, expected ; (77:31) while parsing file: /home/chrisvillan/Documents/cpsc473/hw7/app/scripts/src/dom.js");
