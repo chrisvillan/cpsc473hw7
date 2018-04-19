@@ -4,7 +4,7 @@ import moment from 'moment';
 
 function createGravatarUrl(username) {
   let userhash = mad5(username);
-  return 'http://www.gravatar.com/avatar/${userhash.toString()}';
+  return `http://www.gravatar.com/avatar/${userhash.toString()}`;
 }
 
 export function promptForUsername(){
@@ -20,7 +20,6 @@ export class ChatForm {
   init(submitCallback) {
     this.$form.submit((event) => {
       event.preventDefault();
-      let val = this.$input.val();
       let val = this.$input.val();
       submitCallback(val)
       this.$input.val('');
